@@ -334,7 +334,7 @@ class Item
 			list($path, $requestPath) = preg_replace('@^('.$base.')/@', '', [$path, $requestPath], 1);
 		}
 
-		if ($this->url() == Request::url()) {
+		if ($this->url() == Request::url() || $this->url() == \URL::secure(Request::path())) {
 			$this->activate();
 		}
 	}
